@@ -20,6 +20,9 @@ class ArrivalFilterRequest implements Request
         if(isset($request->equipment) and !is_array($request->equipment)){
             Error::errorRequest();
         }
+		if(isset($request->user) and !is_array($request->user)){
+            Error::errorRequest();
+        }
         if(isset($request->category) and !is_array($request->category)){
             Error::errorRequest();
         }

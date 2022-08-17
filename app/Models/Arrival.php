@@ -23,6 +23,7 @@ class Arrival extends Model
             'e.price e_price',
             'c.id c_id',
             'c.name c_name',
+            'u.id u_id',
             'u.name u_name',
             'arrival.count a_count',
             'arrival.arrival a_arrival'])
@@ -34,6 +35,9 @@ class Arrival extends Model
         }
         if(isset($request->category)){
             $arrival=$arrival->whereIn('c.id',$request->category);
+        }
+		if(isset($request->user)){
+            $arrival=$arrival->whereIn('u_id',$request->user);
         }
         if(isset($request->arrivalStart)){
             $arrival=$arrival->where('arrival.arrival','>=',"{$request->arrivalStart}");

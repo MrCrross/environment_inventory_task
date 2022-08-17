@@ -23,8 +23,11 @@ class Equipment extends Model
         if (isset($request->name)) {
             $env = $env->where('equipments.name','LIKE',"%{$request->name}%");
         }
-        if(isset($request->price)){
-            $env = $env->where('equipments.price','LIKE',"%{$request->price}%");
+        if(isset($request->price_start)){
+            $env = $env->where('equipments.price','>=',"%{$request->price_start}%");
+        }
+		if(isset($request->price_end)){
+            $env = $env->where('equipments.price','<=',"%{$request->price_end}%");
         }
         if(isset($request->categories)){
             $env = $env->whereIn('categories.id',$request->categories);

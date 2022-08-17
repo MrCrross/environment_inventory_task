@@ -16,7 +16,10 @@ class EquipmentFilterRequest implements Request
         if(isset($request->name) and !is_string($request->name)){
             Error::errorRequest();
         }
-        if(isset($request->price) and !is_int($request->price)){
+        if(isset($request->price_start) and !is_int($request->price_start)){
+            Error::errorRequest();
+        }
+		if(isset($request->price_end) and !is_int($request->price_end)){
             Error::errorRequest();
         }
         if(isset($request->categories) and !is_array($request->categories)){

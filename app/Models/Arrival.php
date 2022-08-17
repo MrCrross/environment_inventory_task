@@ -39,17 +39,17 @@ class Arrival extends Model
 		if(isset($request->user)){
             $arrival=$arrival->whereIn('u_id',$request->user);
         }
-        if(isset($request->arrivalStart)){
-            $arrival=$arrival->where('arrival.arrival','>=',"{$request->arrivalStart}");
+        if(isset($request->arrival_start)){
+            $arrival=$arrival->where('arrival.arrival','>=',"{$request->arrival_start}");
         }
-        if(isset($request->arrivalEnd)){
-            $arrival=$arrival->where('arrival.arrival','<=',"{$request->arrivalEnd}");
+        if(isset($request->arrival_end)){
+            $arrival=$arrival->where('arrival.arrival','<=',"{$request->arrival_end}");
         }
-        if(isset($request->countStart)){
-            $arrival=$arrival->where('arrival.count','>=',"{$request->countStart}");
+        if(isset($request->count_start)){
+            $arrival=$arrival->where('arrival.count','>=',"{$request->count_start}");
         }
-        if(isset($request->countEnd)){
-            $arrival=$arrival->where('arrival.count','<=',"{$request->countEnd}");
+        if(isset($request->count_end)){
+            $arrival=$arrival->where('arrival.count','<=',"{$request->count_end}");
         }
         if(isset($request->orderBy) and isset($request->sort)){
             $arrival=$arrival->orderBy($request->orderBy,$request->sort);

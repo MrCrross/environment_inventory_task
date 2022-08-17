@@ -26,16 +26,16 @@ class ArrivalFilterRequest implements Request
         if(isset($request->category) and !is_array($request->category)){
             Error::errorRequest();
         }
-        if(isset($request->arrivalStart) and !is_string($request->arrivalStart)){
+        if(isset($request->arrival_start) and !is_string($request->arrival_start)){
             Error::errorRequest();
         }
-        if(isset($request->arrivalEnd) and !is_string($request->arrivalEnd)){
+        if(isset($request->arrival_end) and !is_string($request->arrival_end)){
             Error::errorRequest();
         }
-        if(isset($request->countStart) and !is_int($request->countStart)){
+        if(isset($request->count_start) and !is_int($request->count_start)){
             Error::errorRequest();
         }
-        if(isset($request->countEnd) and !is_int($request->countEnd)){
+        if(isset($request->count_end) and !is_int($request->count_end)){
             Error::errorRequest();
         }
     }
